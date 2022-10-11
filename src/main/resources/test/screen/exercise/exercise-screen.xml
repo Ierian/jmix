@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://jmix.io/schema/ui/window"
+        caption="msg://exerciseScreen.caption">
+    <data>
+        <instance id="exerciseDc" class="test.entity.Exercise">
+            <fetchPlan extends="_base"/>
+        </instance>
+    </data>
+    <layout>
+        <vbox spacing="true">
+            <comboBox id="exerciseTypeInput"
+                      dataContainer="exerciseDc"
+                      property="type"
+                      caption="Exercise Type"/>
+            <textField id="idField"
+                       dataContainer="exerciseDc"
+                       property="id"
+                       width="400"
+                       enable="false"
+                       caption="Id"/>
+            <textArea id="inputArea"
+                      dataContainer="exerciseDc"
+                      property="input"
+                      rows="3"
+                      width="500"
+                      caption="Input"/>
+            <textArea id="outputArea" rows="5" width="500" caption="Output"/>
+            <entityPicker id="exercisePicker" metaClass="Exercise" caption="Load from db"/>
+            <fileUpload id="fileInput" caption="Import from file"/>
+            <hbox>
+                <button id="saveButton" primary="true" caption="Save"/>
+                <button id="calculateButton" caption="Calculate"/>
+                <button id="exportButton" caption="Export to File"/>
+                <button id="clearFormButton" caption="Clear Form"/>
+            </hbox>
+        </vbox>
+    </layout>
+</window>
